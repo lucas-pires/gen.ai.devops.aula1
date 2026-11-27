@@ -1,0 +1,27 @@
+# Terraform: estado, cache e variáveis locais nunca vão para o repositório
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+*_override.tf
+*_override.tf.json
+
+# Segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Saídas que podem carregar valores sensíveis
+*.tfplan
+plan.out
+plan.txt
+
+# Editor e sistema
+.DS_Store
+.vscode/*
+!.vscode/extensions.json

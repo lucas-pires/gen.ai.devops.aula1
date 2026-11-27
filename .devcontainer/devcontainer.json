@@ -1,0 +1,32 @@
+{
+  "name": "iJanta · CLC16 M1",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.17.2",
+      "tflint": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "22"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "postCreateCommand": "npm install -g @opencode/cli@2.3.2 && pip install --user checkov==3.4.6",
+  "secrets": {
+    "GOOGLE_GENERATIVE_AI_API_KEY": {
+      "description": "Chave do Google AI Studio (projeto próprio). Nunca cole em prompt, chat ou print.",
+      "documentationUrl": "https://aistudio.google.com/apikey"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["hashicorp.terraform"]
+    }
+  },
+  "hostRequirements": {
+    "cpus": 2
+  }
+}
